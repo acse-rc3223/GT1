@@ -13,6 +13,9 @@ public class GT1Main {
 		// call the setter method for the exit
 		gt1Thread.setExit();
 		
+		// need to allow the thread to finish before System.exit
+		gt1Thread.join();
+		
 		System.exit(0);
 
 	}
