@@ -3,7 +3,6 @@ package co.uk.diegesis.Rory.CorneliusSmith.GT1;
 // extends Thread to inherit behaviour
 public class GT1Thread extends Thread{
 	private boolean isExiting = false;
-	private long threadSleepTime = 1000;
 	
 //	run() method
 	public void run() {
@@ -12,7 +11,7 @@ public class GT1Thread extends Thread{
 		while (!isExiting){
 			System.out.println(getName() + " thread is sleeping...");
             try {
-				Thread.sleep(threadSleepTime);
+				Thread.sleep(GT1Constants.THREAD_SLEEP_TIME);
 			} 
             
             catch (InterruptedException e) {
