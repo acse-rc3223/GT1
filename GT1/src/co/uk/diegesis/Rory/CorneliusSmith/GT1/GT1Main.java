@@ -6,7 +6,8 @@ public class GT1Main {
 		// TODO Auto-generated method stub
 		GT1Manager gt1Manager = new GT1Manager();
 		
-		gt1Manager.runOneThread();
+//		gt1Manager.runOneThread();
+		gt1Manager.runManyThreads(4);
 		
 		System.exit(0);
 
