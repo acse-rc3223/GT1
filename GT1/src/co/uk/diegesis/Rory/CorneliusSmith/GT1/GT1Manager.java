@@ -33,14 +33,20 @@ public class GT1Manager {
 			
 			// start each array object as we loop through
 			arrGT1Threads[i].start();
+		}
 			
-			// sleep the main thread
-			Thread.sleep(GT1Constants.THREAD_SLEEP_TIME);
+		// sleep the main thread outside of initialisation for parallel thread running?
+		Thread.sleep(GT1Constants.THREAD_SLEEP_TIME);
 			
+		// create a for loop to exit each thread
+		for (int i = 0; i < N_THREADS; i++) {
 			// once the thread has woken up we call the setExit() method
 			arrGT1Threads[i].setExit();
-			
-			// need to allow the thread to finish before System.exit
+		}
+		
+		// create a for loop to kill all the threads so that we can flush the console
+		for (int i = 0; i < N_THREADS; i++) {
+			// need to allow all the threads to finish and die before System.exit
 			arrGT1Threads[i].join();
 		}
 	}
