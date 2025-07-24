@@ -3,7 +3,7 @@ package co.uk.diegesis.Rory.CorneliusSmith.GT1;
 public class GT1Main {
 
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
+		// create an instance of the manager on the main thread
 		GT1Manager gt1Manager = new GT1Manager();
 		
 //		gt1Manager.runOneThread();
