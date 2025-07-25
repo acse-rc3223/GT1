@@ -1,5 +1,8 @@
 package co.uk.diegesis.Rory.CorneliusSmith.GT1;
 
+// import thread local random to avoid random seed issues with Random library
+import java.util.concurrent.ThreadLocalRandom;
+
 // extends Thread to inherit behaviour
 public class GT1Thread extends Thread{
 	
@@ -8,7 +11,15 @@ public class GT1Thread extends Thread{
 	private volatile boolean isExiting = false;
 	
 	// record when we start to allow thread termination if setExit fails
-//	private final long startTime = System.currentTimeMillis();
+	// private final long startTime = System.currentTimeMillis();
+	
+	// create field for the GT1SynchronisedData (starts as null)
+	private GT1SynchronisedData sharedData;
+	
+	// setter to inject data if there is any provided to the manager method
+	public void setSharedData(GT1SynchronisedData data) {
+		this.sharedData = data;
+	}		
 	
 	// run() method overriding the Thread definition
 	@Override
@@ -22,6 +33,19 @@ public class GT1Thread extends Thread{
 //				// we want to exit the loop and terminate the thread if its run too long and setExit has failed
 //				break;
 //			}
+			
+			// check to see if there is any data
+			if (sharedData != null) {
+				// see if the random boolean create is true
+				if (ThreadLocalRandom.current().nextBoolean()) {
+					// if it is true increment the value
+					sharedData.incrementMyValue();
+				}
+				else {
+					// else decrement the value
+					sharedData.decrementMyValue();
+				}
+			}			
 			
 			System.out.println(this.getName() + " thread is sleeping...");
             try {
