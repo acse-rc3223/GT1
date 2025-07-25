@@ -30,9 +30,6 @@ public class GT1Thread extends Thread{
             
             catch (InterruptedException e) {
 				System.out.println(this.getName() + " thread has failed...");
-				Thread.currentThread().interrupt();
-				// we want to exit the loop and terminate the thread avoiding it re-awakening
-				break;
 			}
 		}
 		
