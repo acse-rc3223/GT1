@@ -8,7 +8,7 @@ public class GT1Thread extends Thread{
 	private volatile boolean isExiting = false;
 	
 	// record when we start to allow thread termination if setExit fails
-	private final long startTime = System.currentTimeMillis();
+//	private final long startTime = System.currentTimeMillis();
 	
 	// run() method overriding the Thread definition
 	@Override
@@ -17,11 +17,11 @@ public class GT1Thread extends Thread{
 		
 		while (!isExiting){
 			
-			if (System.currentTimeMillis() - startTime > GT1Constants.MAX_THREAD_RUNTIME) {
-				System.out.println(this.getName() + " reached max runtime, exiting.");
-				// we want to exit the loop and terminate the thread if its run too long and setExit has failed
-				break;
-			}
+//			if (System.currentTimeMillis() - startTime > GT1Constants.MAX_THREAD_RUNTIME) {
+//				System.out.println(this.getName() + " reached max runtime, exiting.");
+//				// we want to exit the loop and terminate the thread if its run too long and setExit has failed
+//				break;
+//			}
 			
 			System.out.println(this.getName() + " thread is sleeping...");
             try {
