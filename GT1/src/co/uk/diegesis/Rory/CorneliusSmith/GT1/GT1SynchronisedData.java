@@ -6,17 +6,16 @@ public class GT1SynchronisedData {
 	public synchronized void incrementMyValue(){
 		// simply add 1
 		myprotectedInt++;
+		// output to the console here to avoid concurrency issues
+		System.out.println(Thread.currentThread().getName() + " incremented shared value to: " + myprotectedInt);
 		return;
 	}
 	public synchronized void decrementMyValue(){
 		// simply subtract 1
 		myprotectedInt--;
+		// output to the console here to avoid concurrency issues
+		System.out.println(Thread.currentThread().getName() + " decremented shared value to: " + myprotectedInt);
 		return;
-	}
-	
-	// create a getter method so that threads can see myprotectedInt
-	public synchronized long getMyValue() {
-		return myprotectedInt;
 	}
 
 }
