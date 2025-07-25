@@ -7,7 +7,8 @@ public class GT1Main {
 		GT1Manager gt1Manager = new GT1Manager();
 		
 //		gt1Manager.runOneThread();
-		gt1Manager.runManyThreads(4);
+		gt1Manager.runManyThreads();
+//		gt1Manager.runThreadsData();
 		
 		System.exit(0);
 
