@@ -24,7 +24,7 @@ public class GT1Thread extends Thread{
 	// run() method overriding the Thread definition
 	@Override
 	public void run() {
-		System.out.println(this.getName() + " thread has started.");
+		System.out.println(this.getName() + GT1Constants.THREAD_STARTED_STR);
 		
 		while (!isExiting){
 			
@@ -47,15 +47,18 @@ public class GT1Thread extends Thread{
 				}
 			}			
 			
-			System.out.println(this.getName() + " thread is sleeping...");
+			System.out.println(this.getName() + GT1Constants.THREAD_SLEEPING_STR);
             try {
             	Thread.sleep(GT1Constants.THREAD_SLEEP_TIME);
+            	System.out.println(this.getName() + GT1Constants.THREAD_WAKING_STR);
             }
             
             catch (InterruptedException e) {
-				System.out.println(this.getName() + " thread has failed...");
+				System.out.println(this.getName() + GT1Constants.THREAD_INTERRUPTED_STR);
 			}
 		}
+		
+		System.out.println(getName() + GT1Constants.THREAD_EXITING_STR);
 		
 		return;
 	}
@@ -64,7 +67,6 @@ public class GT1Thread extends Thread{
 	public void setExit(boolean shouldExit) {
 		// set as parameter instead of a hard code boolean
 		this.isExiting = shouldExit;
-		System.out.println(this.getName() + " thread is exiting.");
 		return;
 	}
 	

@@ -7,14 +7,14 @@ public class GT1SynchronisedData {
 		// simply add 1
 		myprotectedInt++;
 		// output to the console here to avoid concurrency issues
-		System.out.println(Thread.currentThread().getName() + " incremented shared value to: " + myprotectedInt);
+		System.out.println(Thread.currentThread().getName() + GT1Constants.THREAD_INCREMENT_STR + myprotectedInt);
 		return;
 	}
 	public synchronized void decrementMyValue(){
 		// simply subtract 1
 		myprotectedInt--;
 		// output to the console here to avoid concurrency issues
-		System.out.println(Thread.currentThread().getName() + " decremented shared value to: " + myprotectedInt);
+		System.out.println(Thread.currentThread().getName() + GT1Constants.THREAD_DECREMENT_STR + myprotectedInt);
 		return;
 	}
 

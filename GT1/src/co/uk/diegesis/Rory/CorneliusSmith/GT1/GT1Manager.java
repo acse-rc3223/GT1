@@ -31,7 +31,7 @@ public class GT1Manager {
 			e.printStackTrace();
 		}
 		
-		System.out.println("All threads stopped.");
+		System.out.println(GT1Constants.THREAD_STOP_STR);
 		
 		return;
 	}
@@ -80,7 +80,7 @@ public class GT1Manager {
 			}
 		}
 		
-		System.out.println("All threads stopped.");
+		System.out.println(GT1Constants.THREAD_STOP_STR);
 		
 		return;
 	}
@@ -135,7 +135,7 @@ public class GT1Manager {
 			}
 		}
 		
-		System.out.println("All threads stopped.");
+		System.out.println(GT1Constants.THREAD_STOP_STR);
 		
 		return;
 	}

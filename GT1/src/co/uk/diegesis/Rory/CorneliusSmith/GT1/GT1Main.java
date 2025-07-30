@@ -8,9 +8,9 @@ public class GT1Main {
 		
 		// Uncomment chosen method below to run
 		
-//		gt1Manager.runOneThread();
-//		gt1Manager.runManyThreads();
-//		gt1Manager.runThreadsData();
+		gt1Manager.runOneThread();
+		gt1Manager.runManyThreads();
+		gt1Manager.runThreadsData();
 		
 		System.exit(0);
 
